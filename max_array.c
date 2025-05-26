@@ -1,28 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    // Lire le nombre d'éléments (première ligne de l'entrée)
-    scanf("%d", &n);
+    //Lire la taille du tableau
+    int taille;
+    scanf("%d", &taille); // On lit le premier nombre (ex: 5)
     
-    int arr[n];
-    // Lire les éléments du tableau (deuxième ligne de l'entrée)
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    //Créer et remplir le tableau
+    int tableau[taille]; // On crée un tableau de la taille lue
+    
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tableau[i]); // On remplit le tableau (ex: 2 8 3 5 1)
     }
     
-    // Initialiser max avec le premier élément
-    int max = arr[0];
+    //Chercher le maximum
+    int max = tableau[0]; // On part du premier nombre
     
-    // Parcourir le tableau pour trouver le maximum
-    for (int i = 1; i < n; i++) {
-        // Si on trouve un élément plus grand, on met à jour max
-        if (arr[i] > max) {
-            max = arr[i];
+    for (int i = 1; i < taille; i++) {
+        // Si on trouve un nombre plus grand, il devient le nouveau max
+        if (tableau[i] > max) {
+            max = tableau[i];
         }
     }
     
-    // Afficher le résultat comme dans l'exemple
-    printf("Le maximum est : %d\n", max);
+    // Afficher le résultat
+    printf("Le maximum est : %d\n", max); // Exactement comme dans l'exemple
+    
     return 0;
 }
